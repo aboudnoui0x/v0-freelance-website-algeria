@@ -1,0 +1,151 @@
+export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[]
+
+export interface Database {
+  public: {
+    Tables: {
+      profiles: {
+        Row: {
+          id: string
+          first_name: string
+          last_name: string
+          avatar_url: string | null
+          title: string | null
+          bio: string | null
+          location: string | null
+          website: string | null
+          user_type: "freelancer" | "client"
+          hourly_rate: number | null
+          is_verified: boolean
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id: string
+          first_name: string
+          last_name: string
+          avatar_url?: string | null
+          title?: string | null
+          bio?: string | null
+          location?: string | null
+          website?: string | null
+          user_type: "freelancer" | "client"
+          hourly_rate?: number | null
+          is_verified?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          first_name?: string
+          last_name?: string
+          avatar_url?: string | null
+          title?: string | null
+          bio?: string | null
+          location?: string | null
+          website?: string | null
+          user_type?: "freelancer" | "client"
+          hourly_rate?: number | null
+          is_verified?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      categories: {
+        Row: {
+          id: string
+          name: string
+          slug: string
+          icon: string | null
+          description: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          name: string
+          slug: string
+          icon?: string | null
+          description?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          name?: string
+          slug?: string
+          icon?: string | null
+          description?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      skills: {
+        Row: {
+          id: string
+          name: string
+          category_id: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          name: string
+          category_id?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          name?: string
+          category_id?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      jobs: {
+        Row: {
+          id: string
+          title: string
+          description: string
+          client_id: string
+          category_id: string | null
+          budget_type: "fixed" | "hourly" | "monthly"
+          budget_amount: number | null
+          location: string | null
+          is_remote: boolean
+          status: "open" | "in_progress" | "completed" | "cancelled"
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          title: string
+          description: string
+          client_id: string
+          category_id?: string | null
+          budget_type: "fixed" | "hourly" | "monthly"
+          budget_amount?: number | null
+          location?: string | null
+          is_remote?: boolean
+          status?: "open" | "in_progress" | "completed" | "cancelled"
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          title?: string
+          description?: string
+          client_id?: string
+          category_id?: string | null
+          budget_type?: "fixed" | "hourly" | "monthly"
+          budget_amount?: number | null
+          location?: string | null
+          is_remote?: boolean
+          status?: "open" | "in_progress" | "completed" | "cancelled"
+          created_at?: string
+          updated_at?: string
+        }
+      }
+    }
+  }
+}
